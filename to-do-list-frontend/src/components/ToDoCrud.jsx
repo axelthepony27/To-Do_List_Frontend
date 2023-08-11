@@ -8,9 +8,9 @@ const ToDoCrud = ({ load, todos }) => {
     const [text, setText] = useState("");
     const [done, setDone] = useState("");
     const [priority, setPriority] = useState("");
-    const [dueDate, setDueDate] = useState("");
-    const [dateCreated, setDateCreated] = useState("");
-    const [dateDone, setDateDone] = useState("");
+    const [due_date, setDueDate] = useState("");
+    const [date_created, setDateCreated] = useState("");
+    const [date_done, setDateDone] = useState("");
 
     /* being handlers */
     async function save(event) {
@@ -19,9 +19,9 @@ const ToDoCrud = ({ load, todos }) => {
             text: text,
             done: done,
             priority: priority,
-            dueDate: dueDate,
-            dateCreated: dateCreated,
-            dateDone: dateDone,
+            dueDate: due_date,
+            dateCreated: date_created,
+            dateDone: date_done,
         });
         alert("To-Do Record Saved");
         // reset state
@@ -34,14 +34,14 @@ const ToDoCrud = ({ load, todos }) => {
         setDateDone("");
         load();
     }
-    async function editToDo(todos) {
-        setText(todos.text);
-        setDone(todos.done);
-        setPriority(todos.priority);
-        setId(todos.id);
-        setDueDate(todos.dueDate);
-        setDateCreated(todos.dateCreated);
-        setDateDone(todos.dateDone);
+    async function editToDo(todo) {
+        setText(todo.text);
+        setDone(todo.done);
+        setPriority(todo.priority);
+        setId(todo.id);
+        setDueDate(todo.dueDate);
+        setDateCreated(todo.dateCreated);
+        setDateDone(todo.dateDone);
     }
 
     async function deleteToDo(id) {
@@ -58,9 +58,9 @@ const ToDoCrud = ({ load, todos }) => {
             text: text,
             done: done,
             priority: priority,
-            dueDate: dueDate,
-            dateCreated: dateCreated,
-            dateDone: dateDone,
+            dueDate: due_date,
+            dateCreated: date_created,
+            dateDone: date_done,
         });
         alert("To-Do Details Updated");
         // reset state
@@ -75,9 +75,12 @@ const ToDoCrud = ({ load, todos }) => {
     }
     /* end handlers */
 
+    /*
     /* jsx */
     return (
+
         <div className="container mt-4">
+            {/*
             <form>
                 <div className="form-group my-2">
                     <input
@@ -108,12 +111,12 @@ const ToDoCrud = ({ load, todos }) => {
 
                 <div className="row">
                     <div className="col-4">
-                        <label>Done</label>
+                        <label>Due date</label>
                         <input
                             type="text"
                             className="form-control"
-                            value={done}
-                            placeholder="Doneness"
+                            value={due_date}
+                            placeholder="00/00/00"
                             onChange={e => setDone(e.target.value)}
                         />
                     </div>
@@ -128,6 +131,7 @@ const ToDoCrud = ({ load, todos }) => {
                     </button>
                 </div>
             </form>
+            */}
             <ToDoList
                 todos={todos}
                 editEmployee={editToDo}

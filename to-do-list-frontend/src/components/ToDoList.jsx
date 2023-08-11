@@ -8,7 +8,7 @@ const ToDoList = ({ todos, editToDo, deleteToDo }) => {
                 <th scope="col">Nº</th>
                 <th scope="col">Text</th>
                 <th scope="col">Priority</th>
-                <th scope="col">Done</th>
+                <th scope="col">Due date</th>
 
                 <th scope="col">Option</th>
             </tr>
@@ -20,12 +20,12 @@ const ToDoList = ({ todos, editToDo, deleteToDo }) => {
                         <th scope="row">{index + 1} </th>
                         <td>{todo.text}</td>
                         <td>{todo.priority}</td>
-                        <td>{todo.done}</td>
+                        <td>{todo.dueDate}</td>
                         <td>
                             <button
                                 type="button"
                                 className="btn btn-warning"
-                                onClick={() => editToDo(todo)}
+                                onClick={editToDo}
                             >
                                 Edit
                             </button>
