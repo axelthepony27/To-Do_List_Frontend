@@ -1,24 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import "bootstrap/dist/css/bootstrap.css";
+import api from "./api/axiosConfig";
+import { useEffect, useState } from "react";
+import "./App.css";
+import ToDoCrud from "./components/ToDoCrud";
 
 function App() {
+  const [todos, setToDos] = useState([]);
+
+  /* manage side effects */
+  useEffect(() => {
+    (async () => await load())();
+  }, []);
+
+  async function load() {
+    const result = await api.get("");
+    setToDos(result.data);
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <div>
+        <h1 className="text-center">List Of To-Dos</h1>
+        <ToDoCrud load={load} todos={todos} />
+      </div>
   );
 }
 
