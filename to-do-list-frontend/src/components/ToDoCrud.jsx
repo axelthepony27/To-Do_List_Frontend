@@ -80,7 +80,7 @@ const ToDoCrud = ({ load, todos }) => {
     return (
 
         <div className="container mt-4">
-            {/*
+
             <form>
                 <div className="form-group my-2">
                     <input
@@ -131,7 +131,7 @@ const ToDoCrud = ({ load, todos }) => {
                     </button>
                 </div>
             </form>
-            */}
+            
             <ToDoList
                 todos={todos}
                 editEmployee={editToDo}
