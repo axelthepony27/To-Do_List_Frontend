@@ -1,6 +1,13 @@
-# Getting Started with Create React App
+# To-Do List App Frontend
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+## IMPORTANT
+To install all necessary dependencies, run
+
+### `npm install`
+
+before any other command. 
 
 ## Available Scripts
 
